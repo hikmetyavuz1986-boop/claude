@@ -1,0 +1,2 @@
+İlk notum.
+Bu dosyayı değiştirip tekrar yüklediğimde, GitHub eski hâlini de saklayacak.

@@ -1,0 +1,15 @@
+# Şifre, anahtar ve ayar dosyaları asla GitHub'a yüklenmesin
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+.claude/
+
+# Gereksiz büyük klasörler
+node_modules/
+.venv/
+
+# Windows'un kendi dosyaları
+Thumbs.db
+desktop.ini
