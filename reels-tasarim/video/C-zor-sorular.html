@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Zeus Matematik · C · Zor sorular</title>
+<link rel="stylesheet" href="ortak.css">
+<style>
+.board{position:absolute;left:90px;top:170px;width:900px;height:660px;border-radius:36px;background:#0E2A22;border:10px solid #6B4B2A;box-shadow:0 40px 120px rgba(0,0,0,.45)}
+.board svg{position:absolute;inset:0}
+.chalk{stroke:#F2F2EA;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;fill:none;stroke-dasharray:1800;animation:draw 1.6s ease both}
+@keyframes draw{from{stroke-dashoffset:1800}to{stroke-dashoffset:0}}
+.q{font-size:220px;font-weight:800;fill:#FF8A5B;transform-box:fill-box;transform-origin:center;animation:qpop .5s cubic-bezier(.2,.9,.25,1.35) 1.6s both,wob 1s ease-in-out 2.2s 3}
+@keyframes qpop{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
+@keyframes wob{0%,100%{transform:rotate(0)}30%{transform:rotate(-12deg)}70%{transform:rotate(12deg)}}
+.lbl{font-family:Georgia,serif;font-style:italic;font-size:52px;fill:#E9B949}
+.mark{stroke:#E9B949;stroke-width:8;fill:none;stroke-linecap:round;stroke-dasharray:600;animation:draw2 .8s ease both}
+@keyframes draw2{from{stroke-dashoffset:600}to{stroke-dashoffset:0}}
+.steps{position:absolute;left:80px;right:80px;top:880px;display:flex;flex-direction:column;gap:22px}
+.step{display:flex;align-items:center;gap:30px;font-size:52px;font-weight:700}
+.step .n{flex:none;width:100px;height:100px;border-radius:50px;background:#E9B949;color:#0B1A2E;display:flex;align-items:center;justify-content:center;font-size:44px;font-weight:800}
+.check{flex:none;width:100px;height:100px;border-radius:50px;background:#3FBF7F;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="progress"><i></i></div>
+
+  <!-- 0–5 sn: SORUN -->
+  <div class="scene s1">
+    <div class="board pop" style="animation-delay:0s">
+      <svg viewBox="0 0 880 640" aria-hidden="true">
+        <path class="chalk" d="M100 560 L440 110 L780 560 Z" style="animation-delay:.2s"></path>
+        <circle class="chalk" cx="440" cy="400" r="150" style="animation-delay:.8s"></circle>
+        <text class="lbl" x="424" y="86">A</text>
+        <text class="lbl" x="56" y="600">B</text>
+        <text class="lbl" x="796" y="600">C</text>
+        <text class="q" x="600" y="330">?</text>
+      </svg>
+    </div>
+    <div class="wrap" style="top:900px">
+      <div class="kicker up" style="animation-delay:.6s">ZOR SORU ALARMI</div>
+      <h1 class="h up" style="font-size:108px;animation-delay:.9s">Zor sorularda takılıyor musun<span class="gold">?</span></h1>
+      <div class="sub up" style="animation-delay:2.4s">Soruyu okuyorsun ama nereden başlayacağını bilmiyorsun.</div>
+    </div>
+  </div>
+
+  <!-- 5–10 sn: ÇÖZÜM -->
+  <div class="scene s2">
+    <div class="board">
+      <svg viewBox="0 0 880 640" aria-hidden="true">
+        <path d="M100 560 L440 110 L780 560 Z" style="stroke:#F2F2EA;stroke-width:6;fill:none;stroke-linejoin:round"></path>
+        <circle cx="440" cy="400" r="150" style="stroke:#F2F2EA;stroke-width:6;fill:none"></circle>
+        <text class="lbl" x="424" y="86">A</text>
+        <text class="lbl" x="56" y="600">B</text>
+        <text class="lbl" x="796" y="600">C</text>
+        <path class="mark" d="M440 110 L440 560" style="animation-delay:5.8s"></path>
+        <path class="mark" d="M410 560 L410 530 L440 530" style="animation-delay:6.4s"></path>
+        <path class="mark" d="M150 600 L730 600" style="animation-delay:7.0s"></path>
+        <text x="470" y="360" style="font-family:Georgia,serif;font-style:italic;font-size:48px;fill:#E9B949;animation:fade .5s ease 6.2s both">h</text>
+      </svg>
+    </div>
+    <div class="steps">
+      <div class="kicker up" style="animation-delay:5.2s">ÇÖZÜM · 3 ADIM</div>
+      <div class="step left" style="animation-delay:5.6s"><div class="n">1</div>Verilenleri işaretle</div>
+      <div class="step left" style="animation-delay:6.6s"><div class="n">2</div>Doğru yöntemi seç</div>
+      <div class="step left" style="animation-delay:7.6s"><div class="check pop" style="animation-delay:8.1s"><svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></div>Adım adım sonuca ulaş</div>
+    </div>
+  </div>
+
+  <!-- 10–15 sn: TEKLİF -->
+  <div class="scene s3">
+    <div class="close">
+      <img class="logo pop" src="logo.jpg" alt="Zeus Matematik" style="animation-delay:10.2s">
+      <div class="offer up" style="animation-delay:11.0s">
+        <b>Seviyene uygun birebir soru çözümü</b>
+        <span>Yüz yüze · İstanbul Avrupa Yakası</span>
+      </div>
+      <div class="cta" style="animation-delay:11.9s,13.1s">Hemen Mesaj Gönder</div>
+    </div>
+  </div>
+  <div class="flash"></div>
+</div>
+</body>
+</html>

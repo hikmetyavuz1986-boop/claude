@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Zeus Matematik · D · 11. sınıf</title>
+<link rel="stylesheet" href="ortak.css">
+<style>
+.map{position:absolute;left:0;top:130px;width:1080px;height:760px}
+.road{stroke:rgba(255,255,255,.18);stroke-width:46;fill:none;stroke-linecap:round}
+.lane{stroke:rgba(255,255,255,.45);stroke-width:5;fill:none;stroke-dasharray:22 22}
+.gold{color:#E9B949}
+.goldpath{stroke:#E9B949;stroke-width:46;fill:none;stroke-linecap:round;stroke-dasharray:1700;stroke-dashoffset:1700;animation:go 3s cubic-bezier(.4,0,.2,1) 5.4s both}
+@keyframes go{to{stroke-dashoffset:0}}
+.stop{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800}
+.blk{animation:pop .5s cubic-bezier(.2,.9,.25,1.35) both}
+.endtag{font-size:44px;font-weight:800}
+/* çözüm sahnesinde engeller yeşile döner */
+.fix{animation:pop .5s cubic-bezier(.2,.9,.25,1.35) both}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="progress"><i></i></div>
+
+  <!-- 0–5 sn: SORUN -->
+  <div class="scene s1">
+    <svg class="map" viewBox="0 0 1080 760" aria-hidden="true">
+      <path class="road" d="M120 690 C 380 680, 300 500, 540 470 S 900 390, 820 250 S 640 120, 960 90"></path>
+      <path class="lane" d="M120 690 C 380 680, 300 500, 540 470 S 900 390, 820 250 S 640 120, 960 90"></path>
+      <g class="blk" style="animation-delay:.8s;transform-box:fill-box;transform-origin:center"><rect x="250" y="560" width="250" height="84" rx="20" fill="#E05A3A"></rect><text class="stop" x="375" y="614" text-anchor="middle" font-size="36" fill="#fff">Trigonometri</text></g>
+      <g class="blk" style="animation-delay:1.3s;transform-box:fill-box;transform-origin:center"><rect x="560" y="380" width="250" height="84" rx="20" fill="#E05A3A"></rect><text class="stop" x="685" y="434" text-anchor="middle" font-size="36" fill="#fff">Fonksiyonlar</text></g>
+      <g class="blk" style="animation-delay:1.8s;transform-box:fill-box;transform-origin:center"><rect x="560" y="190" width="230" height="84" rx="20" fill="#E05A3A"></rect><text class="stop" x="675" y="244" text-anchor="middle" font-size="36" fill="#fff">Polinomlar</text></g>
+      <text class="stop" x="80" y="750" font-size="40" fill="#fff">11. sınıf</text>
+      <text class="stop" x="900" y="60" font-size="44" fill="#E9B949">YKS</text>
+    </svg>
+    <div class="wrap" style="top:930px">
+      <div class="kicker up" style="animation-delay:.4s">11. SINIF VELİLERİNE</div>
+      <h1 class="h up" style="font-size:100px;animation-delay:.7s">Eksikler 12. sınıfa <span class="gold">taşınmasın.</span></h1>
+      <div class="sub up" style="animation-delay:2.4s">Birikmiş konular, sınav yılını zorlaştırır.</div>
+    </div>
+  </div>
+
+  <!-- 5–10 sn: ÇÖZÜM -->
+  <div class="scene s2">
+    <svg class="map" viewBox="0 0 1080 760" aria-hidden="true">
+      <path class="road" d="M120 690 C 380 680, 300 500, 540 470 S 900 390, 820 250 S 640 120, 960 90"></path>
+      <path class="goldpath" d="M120 690 C 380 680, 300 500, 540 470 S 900 390, 820 250 S 640 120, 960 90"></path>
+      <g class="fix" style="animation-delay:6.0s;transform-box:fill-box;transform-origin:center"><rect x="250" y="560" width="250" height="84" rx="20" fill="#3FBF7F"></rect><text class="stop" x="375" y="614" text-anchor="middle" font-size="36" fill="#fff">Trigonometri ✓</text></g>
+      <g class="fix" style="animation-delay:6.9s;transform-box:fill-box;transform-origin:center"><rect x="560" y="380" width="250" height="84" rx="20" fill="#3FBF7F"></rect><text class="stop" x="685" y="434" text-anchor="middle" font-size="36" fill="#fff">Fonksiyonlar ✓</text></g>
+      <g class="fix" style="animation-delay:7.8s;transform-box:fill-box;transform-origin:center"><rect x="560" y="190" width="230" height="84" rx="20" fill="#3FBF7F"></rect><text class="stop" x="675" y="244" text-anchor="middle" font-size="36" fill="#fff">Polinomlar ✓</text></g>
+      <text class="stop" x="80" y="750" font-size="40" fill="#fff">11. sınıf</text>
+      <text class="stop" x="900" y="60" font-size="44" fill="#E9B949">YKS</text>
+    </svg>
+    <div class="wrap" style="top:930px">
+      <div class="kicker up" style="animation-delay:5.2s">ÇÖZÜM</div>
+      <h2 class="h up" style="font-size:96px;animation-delay:5.5s">Önceliğe göre <span class="gold">kişisel çalışma planı.</span></h2>
+      <div class="sub up" style="animation-delay:8.2s">Eksik analizi, düzenli takip ve tekrar.</div>
+    </div>
+  </div>
+
+  <!-- 10–15 sn: TEKLİF -->
+  <div class="scene s3">
+    <div class="close">
+      <img class="logo pop" src="logo.jpg" alt="Zeus Matematik" style="animation-delay:10.2s">
+      <div class="offer up" style="animation-delay:11.0s">
+        <b>11. sınıfa özel birebir matematik dersi</b>
+        <span>Yüz yüze · İstanbul Avrupa Yakası</span>
+      </div>
+      <div class="cta" style="animation-delay:11.9s,13.1s">Programı Öğrenin</div>
+    </div>
+  </div>
+  <div class="flash"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Zeus Matematik · A · Konu eksikleri</title>
+<link rel="stylesheet" href="ortak.css">
+<style>
+.photo{position:absolute;left:0;top:0;width:1080px;height:900px;overflow:hidden}
+.photo img{position:absolute;left:-210px;top:-380px;width:1500px;height:2000px;object-fit:cover;animation:kb 5s linear both}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.14) translateY(-20px)}}
+.photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,18,31,.55) 0%,rgba(8,18,31,0) 22%,rgba(8,18,31,0) 65%,#0B1A2E 97%)}
+.chips{display:flex;flex-wrap:wrap;gap:20px;margin-top:10px}
+.chip{display:flex;align-items:center;gap:14px;padding:22px 30px;border-radius:20px;border:3px dashed #FF8A5B;color:#FFD6C7;font-size:40px;font-weight:700}
+.chip em{font-style:normal;color:#FF8A5B;font-weight:800}
+/* yapboz ızgarası */
+.grid{position:absolute;left:190px;top:330px;width:700px;height:470px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.tile{border-radius:22px;background:rgba(255,255,255,.08);border:3px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;font-size:40px;font-weight:800;color:rgba(255,255,255,.9)}
+.tile.done{background:rgba(233,185,73,.16);border-color:#E9B949;color:#E9B949}
+.tile.last{background:#E9B949;border-color:#E9B949;color:#0B1A2E;animation:pop .6s cubic-bezier(.2,.9,.25,1.35) both,glow 1s ease-in-out 1s 3 both}
+@keyframes glow{0%,100%{box-shadow:0 0 0 0 rgba(233,185,73,.6)}50%{box-shadow:0 0 0 24px rgba(233,185,73,0)}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="formulas" aria-hidden="true">
+    <div style="left:70px;top:300px">f(x) = ax² + bx + c</div>
+    <div style="right:80px;top:1000px">a² + b² = c²</div>
+    <div style="left:110px;top:1350px">sin²x + cos²x = 1</div>
+    <div style="right:60px;top:1700px">x² − 5x + 6 = 0</div>
+  </div>
+  <div class="progress"><i></i></div>
+
+  <!-- 0–5 sn: SORUN -->
+  <div class="scene s1">
+    <div class="photo"><img src="yapboz.png" alt=""></div>
+    <div class="wrap" style="top:900px">
+      <div class="kicker up" style="animation-delay:.2s">DUR, BİR SANİYE</div>
+      <h1 class="h up" style="font-size:110px;animation-delay:.5s">Konu eksikleri mi birikiyor<span class="gold">?</span></h1>
+      <div class="chips">
+        <div class="chip pop" style="animation-delay:1.5s"><em>?</em> Denklemler</div>
+        <div class="chip pop" style="animation-delay:1.9s"><em>?</em> Üslü sayılar</div>
+        <div class="chip pop" style="animation-delay:2.3s"><em>?</em> Fonksiyonlar</div>
+      </div>
+      <div class="sub up" style="animation-delay:2.9s">Bir parça eksikse, bütün resim tamamlanmaz.</div>
+    </div>
+  </div>
+
+  <!-- 5–10 sn: ÇÖZÜM -->
+  <div class="scene s2">
+    <div class="wrap" style="top:150px">
+      <div class="kicker up" style="animation-delay:5.2s">ÇÖZÜM</div>
+    </div>
+    <div class="grid">
+      <div class="tile done pop" style="animation-delay:5.4s">Sayılar</div>
+      <div class="tile done pop" style="animation-delay:5.7s">Denklem</div>
+      <div class="tile done pop" style="animation-delay:6.0s">Üslü</div>
+      <div class="tile done pop" style="animation-delay:6.3s">Köklü</div>
+      <div class="tile done pop" style="animation-delay:6.6s">Oran</div>
+      <div class="tile last" style="animation-delay:7.0s">✓</div>
+    </div>
+    <div class="wrap" style="top:900px">
+      <h2 class="h up" style="font-size:100px;animation-delay:7.3s">Eksik parçayı bul, <span class="gold">temelden tamamla.</span></h2>
+      <div class="sub up" style="animation-delay:8.0s">Birebir derslerle, senin hızında.</div>
+    </div>
+  </div>
+
+  <!-- 10–15 sn: TEKLİF -->
+  <div class="scene s3">
+    <div class="close">
+      <img class="logo pop" src="logo.jpg" alt="Zeus Matematik" style="animation-delay:10.2s">
+      <div class="offer up" style="animation-delay:11.0s">
+        <b>Yüz yüze birebir matematik dersi</b>
+        <span>İstanbul Avrupa Yakası · Lise</span>
+      </div>
+      <div class="cta" style="animation-delay:11.9s,13.1s">Hemen Mesaj Gönder</div>
+    </div>
+  </div>
+  <div class="flash"></div>
+</div>
+</body>
+</html>

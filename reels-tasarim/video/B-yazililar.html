@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Zeus Matematik · B · Yazılılar</title>
+<link rel="stylesheet" href="ortak.css">
+<style>
+/* takvim yaprağı */
+.cal{position:absolute;left:290px;top:190px;width:500px;height:560px;border-radius:40px;background:#F6F1E6;color:#0B1A2E;overflow:hidden;
+  box-shadow:0 40px 120px rgba(0,0,0,.45)}
+.cal .top{height:130px;background:#E05A3A;color:#fff;display:flex;align-items:center;justify-content:center;font-size:52px;font-weight:800;letter-spacing:4px}
+.cal .rings{position:absolute;top:-18px;left:0;right:0;display:flex;justify-content:center;gap:160px}
+.cal .rings i{width:28px;height:70px;border-radius:14px;background:#0B1A2E}
+.num{position:absolute;left:0;right:0;top:150px;text-align:center;font-size:300px;font-weight:800;line-height:1;opacity:0}
+.day{position:absolute;left:0;right:0;bottom:44px;text-align:center;font-size:48px;font-weight:800;color:#E05A3A}
+/* sayılar sırayla değişir: 7 → 3 → 1 */
+.n7{animation:n 1.1s ease both .3s}
+.n3{animation:n 1.1s ease both 1.4s}
+.n1{animation:nlast .5s cubic-bezier(.2,.9,.25,1.35) both 2.5s}
+@keyframes n{0%{opacity:0;transform:translateY(-60px)}15%,80%{opacity:1;transform:none}100%{opacity:0;transform:translateY(60px)}}
+@keyframes nlast{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:none}}
+.shake{animation:shake .5s ease 3s 2 both}
+@keyframes shake{0%,100%{transform:rotate(0)}25%{transform:rotate(-4deg)}75%{transform:rotate(4deg)}}
+/* haftalık plan */
+.plan{position:absolute;left:80px;right:80px;top:300px;display:flex;flex-direction:column;gap:26px}
+.row{display:flex;align-items:center;gap:30px;padding:34px 40px;border-radius:26px;background:rgba(255,255,255,.06);border:2px solid rgba(255,255,255,.12)}
+.row .d{flex:none;width:150px;font-size:40px;font-weight:800;color:#E9B949}
+.row .t{flex:1;font-size:48px;font-weight:700;line-height:1.15}
+.row .ok{flex:none;width:84px;height:84px;border-radius:42px;background:#3FBF7F;display:flex;align-items:center;justify-content:center}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="formulas" aria-hidden="true">
+    <div style="left:70px;top:900px">f(x) = ax² + bx + c</div>
+    <div style="right:80px;top:1250px">a² + b² = c²</div>
+    <div style="left:110px;top:1650px">sin²x + cos²x = 1</div>
+  </div>
+  <div class="progress"><i></i></div>
+
+  <!-- 0–5 sn: SORUN -->
+  <div class="scene s1">
+    <div class="cal pop shake" style="animation-delay:0s,3s">
+      <div class="top">YAZILI</div>
+      <div class="num n7">7</div>
+      <div class="num n3">3</div>
+      <div class="num n1">1</div>
+      <div class="day">gün kaldı</div>
+    </div>
+    <div class="wrap" style="top:860px">
+      <div class="kicker up" style="animation-delay:.6s">SAYIN VELİMİZ</div>
+      <h1 class="h up" style="font-size:104px;animation-delay:.9s">Matematik yazılısı yaklaşıyor mu<span class="gold">?</span></h1>
+      <div class="sub up" style="animation-delay:2.6s">Konular birikti, çalışma son geceye kaldı.</div>
+    </div>
+  </div>
+
+  <!-- 5–10 sn: ÇÖZÜM -->
+  <div class="scene s2">
+    <div class="wrap" style="top:150px">
+      <div class="kicker up" style="animation-delay:5.2s">ÇÖZÜM · HAFTALIK PLAN</div>
+    </div>
+    <div class="plan">
+      <div class="row left" style="animation-delay:5.5s">
+        <div class="d">1. gün</div><div class="t">Okul müfredatına göre konu tekrarı</div>
+        <div class="ok pop" style="animation-delay:6.1s"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></div>
+      </div>
+      <div class="row left" style="animation-delay:6.3s">
+        <div class="d">2. gün</div><div class="t">Yazılı tipi soru çalışması</div>
+        <div class="ok pop" style="animation-delay:6.9s"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></div>
+      </div>
+      <div class="row left" style="animation-delay:7.1s">
+        <div class="d">3. gün</div><div class="t">Sınav öncesi genel tekrar</div>
+        <div class="ok pop" style="animation-delay:7.7s"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5L20 7"></path></svg></div>
+      </div>
+    </div>
+    <div class="wrap" style="top:1010px">
+      <h2 class="h up" style="font-size:96px;animation-delay:8.0s">Telaş değil, <span class="gold">planlı hazırlık.</span></h2>
+    </div>
+  </div>
+
+  <!-- 10–15 sn: TEKLİF -->
+  <div class="scene s3">
+    <div class="close">
+      <img class="logo pop" src="logo.jpg" alt="Zeus Matematik" style="animation-delay:10.2s">
+      <div class="offer up" style="animation-delay:11.0s">
+        <b>Çocuğunuzun sınıfına uygun birebir ders</b>
+        <span>Yüz yüze · İstanbul Avrupa Yakası</span>
+      </div>
+      <div class="cta" style="animation-delay:11.9s,13.1s">Ders Programını Sorun</div>
+    </div>
+  </div>
+  <div class="flash"></div>
+</div>
+</body>
+</html>
